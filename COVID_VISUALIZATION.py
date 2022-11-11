@@ -33,6 +33,7 @@ new
 df_new=df_covid.groupby(df_covid['Who_Region'])[['Cases_cumulative_total', 'Deaths_cumulative_total']].sum()
 df_new['Cases_cumulative_total / 1m'] = df_new['Cases_cumulative_total']/10
 df_new = df_new.rename_axis('Who_Region').reset_index()
+
 #calling a function that print lineplot alone
 def line_plot(x_axis,y_axis,xticks,label,title):
     """This function generates a lineplot by accepting five args"""
@@ -54,6 +55,7 @@ title =['Cases and Deaths by Region']
 
 line_plot(x_axis, y_axis, xticks, label, title)
 
+# calling a function to print piechart
 def pie_chart(data,mylabels,explode):
     """This function plots a pie_chart using three args"""
     plt.figure()
